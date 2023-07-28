@@ -1,5 +1,7 @@
 # DoctorsAsDataScientists
 
+*A course by Harry Green and Kate Ruth*
+
 ## Introduction
 
 Data science has become increasingly important in modern medical research, which is often done using large databases of millions of people. As computing facilities become better, the amount of data available for medical research will only increase. Data science is about gaining insights from large data. Most medical guidelines that inform your practice will have been informed by data science, so having some experience in the field will help understand where these insights come from.
