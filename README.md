@@ -267,7 +267,7 @@ Visualising data is important to get a bigger picture rather than just looking a
 
 ### Exercises
 
-What percentage of the data have hypertension?
+You're interested in the links between obesity and hpertension. First, find what percentage of the data have hypertension?
 
 How is this different in people with a BMI over or under 25?
 
@@ -275,13 +275,17 @@ Of the people with hypertension, what percentage also have heart disease?
 
 Plot a histogram of the age of people with hypertension. Repeat this for those without.
 
-How much higher is the average BMI in people with diabetes vs people without diabetes?
+How much higher is the average BMI in people with hypertension vs people without hypertension?
 
-Make a boxplot of the HbA1c levels with and without diabetes?
+Make a boxplot of the BMI levels with and without hypertension.
+
+What do you conclude about the links between BMI and hypertension?
+
+If you have finished, repeat this with HbA1c and diabetes.
 
 ## Session 3 - dplyr and ggplot2
 
-In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load in the same data we used in session 3.
+In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load the same data we used in session 3.
 
 dplyr has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
 
