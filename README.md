@@ -14,6 +14,9 @@ As a junior doctor, you will also be expected to be auditing your own practice. 
 We will be using the R programming language through a piece of software called RStudio, hosted on a website called Posit Cloud, which is free to use.
 On the website https://posit.cloud, create a new RStudio project called Doctors as Data Scientists. This project is where you will be running the workshop commands, and saving your work.
 
+![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/116f2fe3-2f50-4aeb-b3b1-4a18bec55315)
+
+
 ### Command line vs script window
 
 There are two ways to run code in R. The script window (top bit) allows you to write and save multiple lines of code to be executed in one batch. The console (bottom bit) is useful for testing individual lines of code if you’re not sure if you want to save them. I generally recommend testing stuff in the console, and once you have it working, saving the working commands in a script
