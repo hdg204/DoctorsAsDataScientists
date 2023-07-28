@@ -9,7 +9,7 @@ Data science has become increasingly important in modern medical research, which
 As a junior doctor, you will also be expected to be auditing your own practice. You may also become involved in research using data from either your own practice or larger, external databases. Efficient and accurate data-handling skills can make these processes a lot easier.
 
 
-## Week 1
+## Session 1
 
 ### Loading and using RStudio
 
@@ -138,9 +138,69 @@ prevalence=sum(diabetes)/length(diabetes)
 
 In this workshop we've learned how to handle basic variable types in R and run a series of calculations. While everything we did here could be done on a calculator, in the next workshop we will be working with a large dataset of 250,000 people.
 
-<!-- 
 
-## Week 2
+## Session 2 - Working with Data
 
- Can I put loads of stuff here
- -->
+In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the Behavioral Risk Factor Surveillance System (BRFSS) dataset, collected by the CDC to study risk factors for Diabetes. The 2015 data is publicly available.
+
+### Packages
+
+When you load up R, you don't typically get any specialist functions to use. To load the data and do anything interesting with it, we need three packages, which first need to be installed. The `dplyr` package is very common in data science, and contains a lot of useful functions for managing data. The others are used for accessing and reading the file.
+
+```
+install.packages('readr')
+install.packages('knitr')
+install.packages('dplyr')
+```
+
+A load of red text appears, just ignore it. Then, once the packages are installed, they need to be loaded.
+
+```
+library('readr')
+library('knitr')
+library('dplyr')
+```
+
+Now we have our packages loaded, we can read in the data. I've stored this in the github repository along with this course.
+
+
+```
+myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_012_health_indicators_BRFSS2015.csv"
+testdata=read.csv(myfile)
+```
+
+
+
+But these aren't children. The age was 'coded' using a 13 point variable, seen in https://www.icpsr.umich.edu/web/NAHDAP/studies/34085/datasets/0001/variables/AGEG5YR?archive=NAHDAP. This was likely to protect anonymity. We can do some guesswork if we want the real ages, and assume everyone is in the middle of their category. Except the top category is over 80. So we'll just call that 85.
+
+testdata[age==1]=21
+
+
+
+
+Your environment should now look like this
+
+![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/d90bb56f-bf93-4c04-8ca1-b1f2967ebada)
+
+You can see we have 250,000 observations and 22 variables in a table, which in R is called a dataframe.
+
+### Inspecting Data
+
+You can take a closer look with the following functions
+
+```
+dim(testdata)
+nrow(testdata)
+ncol(testdata)
+ls(testdata)
+head(testdata)
+head(testdata, n= 10) 
+```
+
+Run each of them in turn and take some time to work out what each one does.
+
+You can also get a good picture of how the dataframe looks by using ```glimpse(testdata)```, and you can navigate the data interactively using ```View(testdata)```.  
+
+
+
+
