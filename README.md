@@ -275,5 +275,44 @@ Of the people with hypertension, what percentage also have heart disease?
 
 Plot a histogram of the age of people with hypertension. Repeat this for those without.
 
-Make a boxplot of the HbA1c levels with and without diabetes.
+How much higher is the average BMI in people with diabetes vs people without diabetes?
 
+Make a boxplot of the HbA1c levels with and without diabetes?
+
+## Session 3 - dplyr and ggplot2
+
+In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load in the same data we used in session 3.
+
+dplyr has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
+
+### Filter
+
+Filter is a useful command for studying a subset of people.
+
+For example, run ```hyperdata=filter(testdata,hypertension==1)```
+
+What happened to your workspace? How many rows are in this dataframe?
+
+You can combine conditions in the same way as before:
+
+```filter(testdata,hypertension==1&bmi<30)```
+
+What does ```nrow(filter(testdata,hypertension==1&bmi<30))``` tell us about the data?
+
+### Mutate
+
+Mutate creates new columns, which could be based on existing columns in your data.
+
+```testdata2=mutate(testdata,obesity=BMI>30)```
+
+Will create a new column, called obesity, which is TRUE when BMI > 30, and FALSE when it isn't.
+
+### Select
+
+Select is fairly simple, it just selects individual columns that you want. Useful if your dataset has hundreds of variables and you're only interested in a handful.
+
+### Exercises
+
+Use mutate to make a new column, which has the HbA1c in mmol/mol.
+
+Use filter to remove anyone with an NA for HbA1c. HINT: is.na() is a command for checking if something is NA.
