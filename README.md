@@ -132,7 +132,7 @@ prevalence=sum(diabetes)/length(diabetes)
 ```
 -->
 
-### Conclusions
+### Conclusion
 
 In this workshop we've learned how to handle basic variable types in R and run a series of calculations. While everything we did here could be done on a calculator, in the next workshop we will be working with a large dataset of 250,000 people.
 
