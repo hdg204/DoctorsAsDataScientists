@@ -321,3 +321,11 @@ Use mutate to make a new column, which has the HbA1c in mmol/mol.
 Use filter to remove anyone with an NA for HbA1c. HINT: is.na() is a command for checking if something is NA.
 
 What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different when you look at the different smoking statuses?
+
+### Extension - Linear Regression
+
+If you've made it to the end, congratulations. The R command lm can perform linear regression analysis.
+
+What does the output of ```lm(bmi~age,data=testdata)``` tell you? Wrapping summary() around that gives you even more information.
+
+Explore the data in whichever way you feel is interesting. Let me know if you find anything.
