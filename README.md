@@ -103,7 +103,9 @@ Check if this is greater than 48, and store the answer in a variable called diab
 
 Use ```sum()``` to find how many people have diabetes and ```length()``` to find how many people are in your data and calculate the prevalence of diabetes.
 
-### Solution:
+### Solution
+
+*This will be hidden until the last 10 minutes of the workshop*
 
 <!-- 
 ```
