@@ -97,6 +97,8 @@ A function can have one or more arguments. Sometimes, these additional arguments
 Using some of the variables that should be stored from earlier, run the following commands to get a feel for how they work:
 
 ```
+max(v)
+min(v)
 mean(v)
 length(v)
 paste(first_name,surname)
@@ -201,6 +203,77 @@ Run each of them in turn and take some time to work out what each one does.
 
 You can also get a good picture of how the dataframe looks by using ```glimpse(testdata)```, and you can navigate the data interactively using ```View(testdata)```.  
 
+What do the dbl, int and chr mean?
+
+### Subsetting Data
+
+It can be useful to know how to look at a small set of your data at a time, like specific people or specific variables. There are two ways of doing this: using indices and using variable names.
+
+In general, `testdata[row,column]` will give you the data in that row and column of the data. Leaving any of these blank essentially means 'all'.
+
+```testdata[3,4]``` will give you the data in the 3rd row and the 4th column.
+```testdata[2,]``` will give you all of the data for person 2.
+```testdata[,6]``` will give you all the data in column 6.
+
+What will ```testdata[c(3:9),]``` do? Run c(3:9) on its own to see what this is doing if you aren't sure.
+
+When you have lots of columns, it can be quite hard to remember what all the numbers mean. This is where subsetting using the variable name can be helpful.
+
+```testdata$bmi```
+
+Will give you all the BMI values.
+
+What will ```testdata$bmi[c(4,7,c(10:14))]``` do?
+
+### Calculations and Combining Conditions
+
+Once you've subsetted data, it works the same way as any other vector. This means you can run things like ```sum(testdata$bmi>25)``` to find out how many people have a BMI over 25. the `testdata$bmi>25` bit creates a logical vector of TRUE where bmi>25 and FALSE where it is not. Sum then adds up all the TRUE values. If you're interested in the ratio, you can run ```sum(testdata$bmi>25)/nrow(testdata)```. 
+
+To get the actual values of BMI where it is greater than 25, you'll need testdata$bmi[testdata$bmi>25]. This tells R 'I want the BMI values, but only when the BMI values are over 25.
+
+Multiple conditions can be subsetted at once. sum(testdata$bmi<20 & testdata$hypertension==1) will give you how many people have a BMI of less than 20 and have hypertension.
 
 
+### Summarising data
+
+We can apply functions to data, and we can use the same functions we used in week 1.
+
+Calculate the mean BMI using ```mean(testdata$bmi)```. Now do the same for the minimum and maximum BMI. What do you think about the maximum BMI value?
+
+Remind yourselves of what the columns are called using the ```ls``` function. Now, calculate the mean HbA1c. What happened?
+
+We need to talk about the scourge of data science: NA.
+
+### Missing data
+
+Anything missing or otherwise invalid will appear as NA in R. This can happen a lot in real healthcare data, when things aren't recorded properly, or they're only recorded in a subset of people. You can read NA as 'I don't know'.
+
+So why was the mean of HbA1c NA? Why not just give us a number? If Alice is 23, Bob is 60, and you don't know the age of Charlie (NA), who is the oldest? NA, because you don't know. What is the average age? Without Charlie's age, the average age is NA, because you don't know. It doesn't matter how much data you have, if you have 1,000,000 data points, but one of them is NA, you don't know the mean, median, minimum, maximum, etc. This is really annoying, but most functions have a workaround.
+
+```mean(testdata$HbA1c_level,na.rm=TRUE)```
+
+The ```na.rm=TRUE``` bit will tell R to ignore the NAs, and give you the mean.
+
+### Basic plots
+
+Visualising data is important to get a bigger picture rather than just looking at individual points.
+
+```hist(testdata$bmi)```
+
+```boxplot(age ~ heart_disease, data = testdata)```
+
+```hist(testdata$bmi)```
+
+
+### Exercises
+
+What percentage of the data have hypertension?
+
+How is this different in people with a BMI over or under 25?
+
+Of the people with hypertension, what percentage also have heart disease?
+
+Plot a histogram of the age of people with hypertension. Repeat this for those without.
+
+Make a boxplot of the HbA1c levels with and without diabetes.
 
