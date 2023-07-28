@@ -1,6 +1,6 @@
-# DoctorsAsDataScientists
+# Doctors As Data Scientists
 
-*A course by Harry Green and Kate Ruth*
+*Dr. Harry Green (h.d.green@exeter.ac.uk)*
 
 ## Introduction
 
