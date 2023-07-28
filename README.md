@@ -145,7 +145,7 @@ In this workshop we've learned how to handle basic variable types in R and run a
 
 ## Session 2 - Working with Data
 
-In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the Behavioral Risk Factor Surveillance System (BRFSS) dataset, collected by the CDC to study risk factors for Diabetes. The 2015 data is publicly available.
+In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the diabetes prediction dataset, a collection of healthcare records recorded from multiple healthcare providers. More information can be found here: https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset.
 
 ### Packages
 
@@ -167,7 +167,6 @@ library('dplyr')
 
 Now we have our packages loaded, we can read in the data. I've stored this in the github repository along with this course.
 
-
 ```
 myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_prediction_dataset.csv"
 testdata=read.csv(myfile)
@@ -175,9 +174,9 @@ testdata=read.csv(myfile)
 
 Your environment should now look like this
 
-![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/d90bb56f-bf93-4c04-8ca1-b1f2967ebada)
+![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/546e1357-c3c2-4762-87d9-6d1862fb0e7c)
 
-You can see we have 250,000 observations and 22 variables in a table, which in R is called a dataframe.
+You can see we have 100,000 observations and 9 variables in a table, which in R is called a dataframe.
 
 ### Inspecting Data
 
