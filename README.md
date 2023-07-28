@@ -165,7 +165,7 @@ Now we have our packages loaded, we can read in the data. I've stored this in th
 
 
 ```
-myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_012_health_indicators_BRFSS2015.csv"
+myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_prediction_dataset.csv"
 testdata=read.csv(myfile)
 ```
 
