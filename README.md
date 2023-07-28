@@ -19,7 +19,16 @@ On the website https://posit.cloud, create a new RStudio project called Doctors 
 
 ### Command line vs script window
 
-There are two ways to run code in R. The script window (top bit) allows you to write and save multiple lines of code to be executed in one batch. The console (bottom bit) is useful for testing individual lines of code if you’re not sure if you want to save them. I generally recommend testing stuff in the console, and once you have it working, saving the working commands in a script
+First, create a new R file. 
+
+![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/47198d65-22af-4f60-bdf5-30de1f7cf7e4)
+
+Your window should now look something like this.
+
+![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/87374858-6099-48f5-86d8-d3ee324e8576)
+
+
+There are two ways to run code in R. The script window (top left bit) allows you to write and save multiple lines of code to be executed in one batch. The console (bottom left bit) is useful for testing individual lines of code if you’re not sure if you want to save them. I generally recommend testing stuff in the console, and once you have it working, saving the working commands in a script
 
 ### Simple commands
 
@@ -106,7 +115,7 @@ Check if this is greater than 48, and store the answer in a variable called diab
 
 Use ```sum()``` to find how many people have diabetes and ```length()``` to find how many people are in your data and calculate the prevalence of diabetes.
 
-Write this in a script and save it as HbA1c.R. The data should **only** appear on line 1. It should be very easy to add new people to this, run the script again and get a new ouput.
+Write this in a script and save it as HbA1c.R. The data should **only** appear on line 1. It should be very easy to add new people to this, run the script again and get a new output. If you save the script, it should appear in your list of files on the bottom right.
 
 ### Solution
 
