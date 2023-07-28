@@ -106,6 +106,8 @@ Check if this is greater than 48, and store the answer in a variable called diab
 
 Use ```sum()``` to find how many people have diabetes and ```length()``` to find how many people are in your data and calculate the prevalence of diabetes.
 
+Write this in a script and save it as HbA1c.R. The data should **only** appear on line 1. It should be very easy to add new people to this, run the script again and get a new ouput.
+
 ### Solution
 
 *This will be hidden until the last 10 minutes of the workshop*
