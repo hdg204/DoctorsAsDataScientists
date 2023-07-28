@@ -171,15 +171,6 @@ myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_pr
 testdata=read.csv(myfile)
 ```
 
-
-
-But these aren't children. The age was 'coded' using a 13 point variable, seen in https://www.icpsr.umich.edu/web/NAHDAP/studies/34085/datasets/0001/variables/AGEG5YR?archive=NAHDAP. This was likely to protect anonymity. We can do some guesswork if we want the real ages, and assume everyone is in the middle of their category. Except the top category is over 80. So we'll just call that 85.
-
-testdata[age==1]=21
-
-
-
-
 Your environment should now look like this
 
 ![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/d90bb56f-bf93-4c04-8ca1-b1f2967ebada)
@@ -262,8 +253,7 @@ Visualising data is important to get a bigger picture rather than just looking a
 
 ```boxplot(age ~ heart_disease, data = testdata)```
 
-```hist(testdata$bmi)```
-
+```plot(testdata$age,testdata$bmi)```
 
 ### Exercises
 
@@ -317,6 +307,15 @@ Select is fairly simple, it just selects individual columns that you want. Usefu
 
 ### Exercises
 
+You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINT: is.na() is a command for checking if something is NA).
+
+Plot histograms of HbA1c and BMI to remind yourself of the distribution. Looking at data is important.
+
+You have this really long tail in that distribution of BMI. How many are above 60? Make a new dataframe where you exclude those and plot a new histogram of BMI.
+
+In this new dataframe, find the highest HbA1c value. What is the BMI of the person with the highest HbA1c value?
 Use mutate to make a new column, which has the HbA1c in mmol/mol.
 
 Use filter to remove anyone with an NA for HbA1c. HINT: is.na() is a command for checking if something is NA.
+
+What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different when you look at the different smoking statuses?
