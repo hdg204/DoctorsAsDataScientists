@@ -109,7 +109,7 @@ paste(first_name,surname)
 You can also store the output of a function in a variable. This is very useful when you have a long series of commands to write.
 ```full_name=paste(first_name,surname)```
 
-## Exercise
+## Exercise 1
 
 You have a group of patients, who have HbA1c values, in percent, of 5, 7, 6.5, 9, 8, 7, 5.5, 5.5, 9, 4. Store this as a numerical vector called HbA1c1.
 
@@ -125,7 +125,7 @@ Write this in a script and save it as HbA1c.R. The data should **only** appear o
 
 ### Solution
 
-*This will be hidden until the last 10 minutes of the workshop*
+*This will be hidden until the end of the workshop*
 
 <!-- 
 ```
@@ -257,7 +257,7 @@ Visualising data is important to get a bigger picture rather than just looking a
 
 ```plot(testdata$age,testdata$bmi)```
 
-### Exercises
+### Exercise 2
 
 You're interested in the links between obesity and hpertension. First, find what percentage of the data have hypertension?
 
@@ -265,7 +265,7 @@ How is this different in people with a BMI over or under 25?
 
 Of the people with hypertension, what percentage also have heart disease?
 
-Plot a histogram of the age of people with hypertension. Repeat this for those without.
+Plot a histogram of the age of people with hypertension. Repeat this for those without. What does the difference between these plots tell you?
 
 How much higher is the average BMI in people with hypertension vs people without hypertension?
 
@@ -275,11 +275,30 @@ What do you conclude about the links between BMI and hypertension?
 
 If you have finished, repeat this with HbA1c and diabetes.
 
-## Session 3 - dplyr and ggplot2
+### Solutions
+
+*This section is hidden until after the workshop*
+
+<!-- 
+```
+hypertension_prev=sum(testdata$hypertension==1)/nrow(testdata)
+hypertension_u25=sum(testdata$hypertension[testdata$bmi<25]==1)/sum(testdata$bmi<25)
+hypertension_o25=sum(testdata$hypertension[testdata$bmi>25]==1)/sum(testdata$bmi>25)
+hist(testdata$age[testdata$hypertension==1])
+hist(testdata$age[testdata$hypertension==0])
+mean(testdata$bmi[testdata$hypertension==1])-mean(testdata$bmi[testdata$hypertension==0])
+boxplot(bmi~hypertension,testdata)
+prevalence=sum(diabetes)/length(diabetes)
+```
+-->
+
+## Session 3 - dplyr and basic statistics
 
 In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load the same data we used in session 3.
 
 dplyr has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
+
+This session is light on additional content and contains more exercises for exploring the data. dplyr commands may help you with the exercises and can help you write readable code, but are not always necessary.
 
 ### Filter
 
@@ -307,20 +326,79 @@ Will create a new column, called obesity, which is TRUE when BMI > 30, and FALSE
 
 Select is fairly simple, it just selects individual columns that you want. Useful if your dataset has hundreds of variables and you're only interested in a handful.
 
-### Exercises
+### Exercise 3
 
-You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINT: is.na() is a command for checking if something is NA).
+You're interested in the differences between men and women in your data. 
+
+First you check what percentage of your data is Male, and what percentage is Female.
+
+What percentage of males are current smokers? What about females?
+
+Are males more or less likely to have diabetes, heart disease or hypertension than females?
+
+What is the difference in the average BMI between males and females?
+
+Plot a histogram of the BMI in males, and then again for females.
+
+Make a box plot showing this information.
+
+What do you think is driving these results?
+
+<!-- 
+```
+nrow(filter(testdata=='Male'))/nrow(testdata)
+nrow(filter(testdata=='Male' & smoking_history=='current')) / nrow(filter(testdata=='Male'))
+nrow(filter(testdata=='Female' & smoking_history=='current')) / nrow(filter(testdata=='Female'))
+
+mean(testdata$diabetes[testdata$gender=='Male'])
+mean(testdata$diabetes[testdata$gender=='Female'])
+mean(testdata$hypertension[testdata$gender=='Male'])
+mean(testdata$hypertension[testdata$gender=='Female'])
+mean(testdata$heart_disease[testdata$gender=='Male'])
+mean(testdata$heart_disease[testdata$gender=='Female'])
+
+mean(testdata$bmi[testdata$gender=='Male'])-mean(testdata$bmi[testdata$gender=='Female'])
+
+hist(testdata$bmi[testdata$gender=='Male'])
+
+hist(testdata$bmi[testdata$gender=='Female'])
+boxplot(bmi~gender,testdata)
+```
+-->
+
+### Exercise 4
+
+You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINT: !is.na() is a command for checking if something isn't NA).
 
 Plot histograms of HbA1c and BMI to remind yourself of the distribution. Looking at data is important.
 
 You have this really long tail in that distribution of BMI. How many are above 60? Make a new dataframe where you exclude those and plot a new histogram of BMI.
 
-In this new dataframe, find the highest HbA1c value. What is the BMI of the person with the highest HbA1c value?
-Use mutate to make a new column, which has the HbA1c in mmol/mol.
+In this new dataframe, find the highest BMI value. What is the HbA1c of the person with the highest BMI value?
 
-Use filter to remove anyone with an NA for HbA1c. HINT: is.na() is a command for checking if something is NA.
+What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different in men and women?
 
-What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different when you look at the different smoking statuses?
+### Solutions
+
+*This section is hidden until after the workshop*
+
+<!-- 
+```
+testdata2=filter(testdata,!is.na(HbA1c_level))
+testdata3=mutate(testdata2,HbA1cmmol=11*(HbA1c_level-2.15))
+hist(testdata3$HbA1cmmol)
+hist(testdata3$bmi)
+testdata4=filter(testdata3,bmi<60)
+hist(testdata4$bmi)
+maxbmi=max(testdata4$bmi)
+testdata4$HbA1cmmol[testdata4$bmi==maxbmi]
+nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48)) / nrow(filter(testdata4,bmi>25))
+nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Male')) / nrow(filter(testdata4,bmi>25 & gender=='Male'))
+nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Female')) / nrow(filter(testdata4,bmi>25 & gender=='Female'))
+```
+-->
+
+
 
 ### Extension - Linear Regression
 
