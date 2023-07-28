@@ -80,7 +80,9 @@ It is often useful to be able to compare two numbers. Since = is used for assign
 
 For example, ```comp=5==7``` will create a logical variable called comp with the value FALSE.
 
-Compare 5 with 7 using the following operators: < > <= >= == and !=.
+Compare 5 with 7 using the following operators: <, >, <=, >=, ==, and !=.
+
+Putting an ! before a logical makes it the opposite, so != means 'is not equal to'.
 
 ### Vectors
 A vector is a list of values, which can be stored under one name. This is done using c. For example,
