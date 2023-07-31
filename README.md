@@ -117,7 +117,7 @@ You don’t like working with %. In diabetes class, you were taught mmol/mol. Su
 
 What is the highest HbA1c value in mmol/mol? What is the mean?
 
-Check if this is greater than 48, and store the answer in a variable called diabetes. 
+Check if this HbA1c2 greater than 48, and store the answer in a variable called diabetes. 
 
 Use ```sum()``` to find how many people have diabetes and ```length()``` to find how many people are in your data and calculate the prevalence of diabetes.
 
