@@ -4,24 +4,37 @@
  
 ## Introduction
 
-Data science has become increasingly important in modern medical research, which is often done using large databases of millions of people. As computing facilities become better, the amount of data available for medical research will only increase. Data science is about gaining insights from large data. Most medical guidelines that inform your practice will have been informed by data science, so having some experience in the field will help understand where these insights come from.
+Data science has become increasingly important in modern medical research, which is often done using large databases of millions of people. As computing facilities become better and we move towards a "Digital NHS", the amount of data available for medical research will only increase. Data science is about gaining insights from large data. Most medical guidelines that inform your practice will have been informed by data science, so having some experience in the field will help understand where these insights come from.
 
 As a junior doctor, you will also be expected to be auditing your own practice. You may also become involved in research using data from either your own practice or larger, external databases. Efficient and accurate data-handling skills can make these processes a lot easier.
 
+We will be using the R programming language through a piece of software called RStudio, hosted on a website called Posit Cloud, which is free to use. R is used widely for data analyses and statistics in medical research and it is free to download and very flexible in what you can use it for.  In comparison to using something like Excel, R is better able to work with 100,000s of records, is easier to automate and can easily allow steps in your analyses to be shared with others.
+
+## Before the Course
+
+You will need to register on Posit Cloud
+
+https://posit.cloud 
 
 ## Session 1
 
+_Aim: learn some efficient and reproducible ways of working with data that will help you in your future careers._
+
 ### Loading and using RStudio
 
-We will be using the R programming language through a piece of software called RStudio, hosted on a website called Posit Cloud, which is free to use.
 On the website https://posit.cloud, create a new RStudio project called Doctors as Data Scientists. This project is where you will be running the workshop commands, and saving your work.
+
+1. Select “New RStudio Project” from the menu: 
 
 ![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/116f2fe3-2f50-4aeb-b3b1-4a18bec55315)
 
+2. You will get a message saying “Deploying project”
+  
+3. You will see the following window – image
 
 ### Command line vs script window
 
-First, create a new R file. 
+4. First, create a new "R script" file.
 
 ![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/47198d65-22af-4f60-bdf5-30de1f7cf7e4)
 
@@ -30,23 +43,39 @@ Your window should now look something like this.
 ![image](https://github.com/hdg204/DoctorsAsDataScientists/assets/36624710/87374858-6099-48f5-86d8-d3ee324e8576)
 
 
-There are two ways to run code in R. The script window (top left bit) allows you to write and save multiple lines of code to be executed in one batch. The console (bottom left bit) is useful for testing individual lines of code if you’re not sure if you want to save them. I generally recommend testing stuff in the console, and once you have it working, saving the working commands in a script
+There are two ways to run code in R. The script window ( top left bit) allows you to write and save multiple lines of code to be executed in one batch. The console (bottom left bit) is useful for experimenting with code if you're not sure it will work. Put all of your answers in the script window so you can save a file called `week1.R` with this session's code.
 
 ### Simple commands
 
-To check R is running properly, in the console, run
+5. You can use R like a calculator.
+
+To check R is running properly, in the console, type the following and press enter:
 
 ``` 40+30 ```
 
-You should get the answer appearing on screen.
+6. Try doing the same in the script window. What happens?
+ 
+7. To run the command in the script window, click at the end of the line and then click the “Run” icon
+ 
+8. Try adding these calculations to the script window. 
+
+```40*30```
+```40-30```
+```40/30 ```
+
+You can run all these at once by highlighting and clicking "Run".
+
+Q1: From your answers, what do the symbols mean? 
+
+### Saving your Script
 
 ### Variable Types
 
-This course covers three basic variable types.
+A variable is an object in R that stores some information. This could be a number, a name, a list of numbers, a date, etc. This course covers three basic variable types.
 
-* **numeric**, for example a person’s BMI
-* **character**, for example a person’s name
-* **logical**, which is a TRUE/FALSE variable, e.g. whether a person has cancer or not
+* **numeric**, for example a person’s BMI.
+* **character**, for example a person’s name.
+* **logical**, which is a TRUE/FALSE variable, e.g. whether a person has cancer or not. This is stored as a 1 for TRUE and 0 for false.
   
 There are other variable types too, such as date, time, and factors, but we will not go into these in this course.
 
@@ -63,6 +92,8 @@ These should now be stored in R as numeric variables, and you can see them in th
 
 ```BMI=weight/(height^2)```
 
+To see the results of your calculation type ```print(BMI)```.
+
 You can also store character variables in this way, but they require quotation marks around them. Try storing your name in a character variable.
 
 ```
@@ -72,31 +103,35 @@ surname='your_name'
 
 Note that a character variable, which can essentially store any kind of text, needs quotation marks around it. If you try ```first_name=Harry```, then it will trigger an error.
 
+Q: Add commands to your script to print the name variables you have created. 
+
 Note that these quotation marks MUST be 'and'. Not ‘and’. If your keyboard is adding these 'smart quotes', you'll need to disable these using Settings > general > keyboard on an ipad.
 
 ### Comparing variables
 
-It is often useful to be able to compare two numbers. Since = is used for assigning variables, testing if two things are equal to each other is done using ==. You can also use < or >. The output will always be a logical variable.
+It is often useful to be able to compare two numbers. Since = is used for assigning variables, testing if two things are equal to each other is done using ==. You can also use < or > for other types of comparisons. The output will always be a logical variable.
 
 For example, ```comp=5==7``` will create a logical variable called comp with the value FALSE.
 
 Compare 5 with 7 using the following operators: <, >, <=, >=, ==, and !=.
 
-Putting an ! before a logical makes it the opposite, so != means 'is not equal to'.
+Q: What is each of these comparisons doing?
 
 ### Vectors
-A vector is a list of values, which can be stored under one name. This is done using c. For example,
+A vector is a variable type that stores a list of values under one name. This is done using ```c```, an R function that combines things together. For example,
 
 ```v=c(5,6,7,8)```
 
 will store ```v``` as a vector which contains the 4 numbers. You can then operate on these at once.
-Try running ```v*2```, ```v-4```, and ```v>6```.
+
+Q: Try running ```v*2```, ```v-4```, and ```v>6```. Give your answers.
 
 ### Functions, arguments and outputs
 
 A series of commands can be pre-packaged into a function to allow common tasks to be run quicker and easier.
 A function can have one or more arguments. Sometimes, these additional arguments control how the function works.
-Using some of the variables that should be stored from earlier, run the following commands to get a feel for how they work:
+
+Q. Using some of the variables that should be stored from earlier, run the following commands to get a feel for how they work and write down your answers:
 
 ```
 max(v)
@@ -111,17 +146,19 @@ You can also store the output of a function in a variable. This is very useful w
 
 ## Exercise 1
 
-You have a group of patients, who have HbA1c values, in percent, of 5, 7, 6.5, 9, 8, 7, 5.5, 5.5, 9, 4. Store this as a numerical vector called HbA1c1.
+You’ve been asked to check how many patients in your clinic have diabetes to compare with a similar clinic at another hospital. These are all patients with diabetes symptoms and according to your guidelines, a single measurement of HbA1c will allow you to make the diagnosis. HbA1c is a measure of the average blood sugar levels over the last 3 months. Note that in real life you would need some additional information and there are exceptions to these rules! You have realised that if you make an R script, you can easily and quickly do this comparison and do this again in the future: 
 
-You don’t like working with %. In diabetes class, you were taught mmol/mol. Subtract 2.15 from HbA1c1, and multiply it by 11, to give HbA1c2, which is now in mmol/mol.
+1. Make a new R script and save it with a name that helps you remember what it does. Your script, should appear in your list of files on the bottom right
+2. Make a numerical vector called HbA1c1 that contains the following percent HbA1c measures for the group of patients: 5, 7, 6.5, 9, 8, 7, 5.5, 5.5, 9, 4. 
+3. The threshold for diagnosing diabetes is >48 mmol/mol which you can calculate by  subtracting 2.15 from HbA1c1, and then multiplying it by 11. Make a new numerical vector called HbA1c2 which has the values in mmol/mol.
+4. What is the highest HbA1c value in mmol/mol? What is the mean?
+5. Make a vector variable called “diabetes” that stores the result of checking  if each person has an HbA1c2 greater than 48. 
+6. Use your diabetes vector variable and the  sum() function to find how many people have diabetes. What is this function doing?
+7. Use the  length() function to find how many people are in your data. Combine the sum() and length() variables to make a variable that contains calculate the prevalence of diabetes.
+8. Your colleague who runs a similar clinic at another hospital sends you a list of the % HbA1c measurements for their patients: 8, 7, 5.5, 7, 6.5, 9, 8, 7, 5.5, 5.5, 9, 4, 7, 5.5, 5. By only changing the command in your script that makes the numerical vector, find the prevalence of diabetes in this patient group.
+9. Which hospital has the highest prevalence of diabetes – yours or your colleagues?
+10. If your colleague didn’t want to share their data with you, suggest how else you could help them to find the prevalence in their patients?
 
-What is the highest HbA1c value in mmol/mol? What is the mean?
-
-Check if this HbA1c2 greater than 48, and store the answer in a variable called diabetes. 
-
-Use ```sum()``` to find how many people have diabetes and ```length()``` to find how many people are in your data and calculate the prevalence of diabetes.
-
-Write this in a script and save it as HbA1c.R. The data should **only** appear on line 1. It should be very easy to add new people to this, run the script again and get a new output. If you save the script, it should appear in your list of files on the bottom right.
 
 ### Solution
 
