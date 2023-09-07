@@ -182,6 +182,8 @@ In this workshop we've learned how to handle basic variable types in R and run a
 
 ## Session 2 - Working with Data
 
+<!-- 
+
 In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the diabetes prediction dataset, a collection of healthcare records recorded from multiple healthcare providers. More information can be found here: https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset.
 
 ### Packages
@@ -315,7 +317,7 @@ If you have finished, repeat this with HbA1c and diabetes.
 
 *This section is hidden until after the workshop*
 
-<!-- 
+
 ```
 hypertension_prev=sum(testdata$hypertension==1)/nrow(testdata)
 hypertension_u25=sum(testdata$hypertension[testdata$bmi<25]==1)/sum(testdata$bmi<25)
@@ -326,9 +328,12 @@ mean(testdata$bmi[testdata$hypertension==1])-mean(testdata$bmi[testdata$hyperten
 boxplot(bmi~hypertension,testdata)
 prevalence=sum(diabetes)/length(diabetes)
 ```
+
 -->
 
 ## Session 3 - dplyr and basic statistics
+
+<!-- 
 
 In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load the same data we used in session 3.
 
@@ -417,8 +422,7 @@ What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this
 ### Solutions
 
 *This section is hidden until after the workshop*
-
-<!-- 
+ 
 ```
 testdata2=filter(testdata,!is.na(HbA1c_level))
 testdata3=mutate(testdata2,HbA1cmmol=11*(HbA1c_level-2.15))
@@ -432,7 +436,6 @@ nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48)) / nrow(filter(testdata4,bmi>25))
 nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Male')) / nrow(filter(testdata4,bmi>25 & gender=='Male'))
 nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Female')) / nrow(filter(testdata4,bmi>25 & gender=='Female'))
 ```
--->
 
 
 
@@ -443,3 +446,5 @@ If you've made it to the end, congratulations. The R command lm can perform line
 What does the output of ```lm(bmi~age,data=testdata)``` tell you? Wrapping summary() around that gives you even more information.
 
 Explore the data in whichever way you feel is interesting. Let me know if you find anything.
+
+-->
