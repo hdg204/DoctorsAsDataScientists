@@ -183,7 +183,6 @@ In this workshop we've learned how to handle basic variable types in R and run a
 ## Session 2 - Working with Data
 
 <!-- 
-
 In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the diabetes prediction dataset, a collection of healthcare records recorded from multiple healthcare providers. More information can be found here: https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset.
 
 ### Packages
@@ -328,7 +327,6 @@ mean(testdata$bmi[testdata$hypertension==1])-mean(testdata$bmi[testdata$hyperten
 boxplot(bmi~hypertension,testdata)
 prevalence=sum(diabetes)/length(diabetes)
 ```
-
 -->
 
 ## Session 3 - dplyr and basic statistics
