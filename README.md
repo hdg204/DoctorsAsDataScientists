@@ -162,9 +162,7 @@ You’ve been asked to check how many patients in your clinic have diabetes to c
 
 ### Solution
 
-*This will be hidden until the end of the workshop*
 
-<!-- 
 ```
 HbA1c1=c(5, 7, 6.5, 9, 8, 7, 5.5, 4.5, 9, 4)
 HbA1c2=11*(HbA1c1-2.15)
@@ -173,7 +171,6 @@ mean_HbA1c= mean(HbA1c2)
 diabetes=HbA1c2>48
 prevalence=sum(diabetes)/length(diabetes)
 ```
--->
 
 ### Conclusion
 
