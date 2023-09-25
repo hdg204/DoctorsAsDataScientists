@@ -179,7 +179,7 @@ In this workshop we've learned how to handle basic variable types in R and run a
 
 ## Session 2 - Working with Data
 
-<!-- 
+
 In the last session, we learned how to work with simple variable types in R, and covered assignment, functions, and vectors. In this session, we will move on to studying real healthcare data using R. We will use the diabetes prediction dataset, a collection of healthcare records recorded from multiple healthcare providers. More information can be found here: https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset.
 
 ### Packages
@@ -313,7 +313,7 @@ If you have finished, repeat this with HbA1c and diabetes.
 
 *This section is hidden until after the workshop*
 
-
+<!-- 
 ```
 hypertension_prev=sum(testdata$hypertension==1)/nrow(testdata)
 hypertension_u25=sum(testdata$hypertension[testdata$bmi<25]==1)/sum(testdata$bmi<25)
