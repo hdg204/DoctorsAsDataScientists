@@ -154,7 +154,7 @@ You’ve been asked to check how many patients in your clinic have diabetes to c
 4. What is the highest HbA1c value in mmol/mol? What is the mean?
 5. Make a vector variable called “diabetes” that stores the result of checking  if each person has an HbA1c2 greater than 48. 
 6. Use your diabetes vector variable and the  sum() function to find how many people have diabetes. What is this function doing?
-7. Use the  length() function to find how many people are in your data. Combine the sum() and length() variables to make a variable that contains calculate the prevalence of diabetes.
+7. Use the  length() function to find how many people are in your data. Combine the sum() and length() variables to make a variable that contains calculate the percentage of people with diabetes.
 8. Your colleague who runs a similar clinic at another hospital sends you a list of the % HbA1c measurements for their patients: 8, 7, 5.5, 7, 6.5, 9, 8, 7, 5.5, 5.5, 9, 4, 7, 5.5, 5. By only changing the command in your script that makes the numerical vector, find the prevalence of diabetes in this patient group.
 9. Which hospital has the highest prevalence of diabetes – yours or your colleagues?
 10. If your colleague didn’t want to share their data with you, suggest how else you could help them to find the prevalence in their patients?
