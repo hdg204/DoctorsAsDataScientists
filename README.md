@@ -313,7 +313,6 @@ If you have finished, repeat this with HbA1c and diabetes.
 
 *This section is hidden until after the workshop*
 
-<!-- 
 ```
 hypertension_prev=sum(testdata$hypertension==1)/nrow(testdata)
 hypertension_u25=sum(testdata$hypertension[testdata$bmi<25]==1)/sum(testdata$bmi<25)
@@ -324,11 +323,10 @@ mean(testdata$bmi[testdata$hypertension==1])-mean(testdata$bmi[testdata$hyperten
 boxplot(bmi~hypertension,testdata)
 prevalence=sum(diabetes)/length(diabetes)
 ```
--->
 
 ## Session 3 - dplyr and basic statistics
 
-<!-- 
+
 In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load the same data we used in session 3.
 
 dplyr has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
@@ -379,6 +377,7 @@ Make a box plot showing this information.
 
 What do you think is driving these results?
 
+<!-- 
 ```
 nrow(filter(testdata=='Male'))/nrow(testdata)
 nrow(filter(testdata=='Male' & smoking_history=='current')) / nrow(filter(testdata=='Male'))
