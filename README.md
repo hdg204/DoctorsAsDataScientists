@@ -397,6 +397,7 @@ hist(testdata$bmi[testdata$gender=='Male'])
 hist(testdata$bmi[testdata$gender=='Female'])
 boxplot(bmi~gender,testdata)
 ```
+-->
 
 ### Exercise 4
 
@@ -413,7 +414,7 @@ What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this
 ### Solutions
 
 *This section is hidden until after the workshop*
- 
+ <!-- 
 ```
 testdata2=filter(testdata,!is.na(HbA1c_level))
 testdata3=mutate(testdata2,HbA1cmmol=11*(HbA1c_level-2.15))
