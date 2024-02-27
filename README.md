@@ -377,7 +377,10 @@ Make a box plot showing this information.
 
 What do you think is driving these results?
 
-<!-- 
+### Solutions
+
+*This section is hidden until after the workshop*
+ <!-- 
 ```
 nrow(filter(testdata=='Male'))/nrow(testdata)
 nrow(filter(testdata=='Male' & smoking_history=='current')) / nrow(filter(testdata=='Male'))
