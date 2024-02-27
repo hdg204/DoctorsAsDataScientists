@@ -464,6 +464,6 @@ nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Female')) / nrow(filter
 
 If you've made it to the end, congratulations. The R command lm can perform linear regression analysis.
 
-What does the output of ```lm(bmi~age,data=testdata)``` tell you? Wrapping summary() around that gives you even more information.
+What does the output of ```lm(bmi~age,data=testdata)``` tell you? Wrapping `summary()` around that `summary(lm(bmi~age,data=testdata))` gives you even more information.
 
 Explore the data in whichever way you feel is interesting. Let me know if you find anything.
