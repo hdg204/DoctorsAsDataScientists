@@ -427,7 +427,9 @@ boxplot(bmi~gender,testdata)
 
 ### Exercise 4
 
-You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINT: !is.na() is a command for checking if something isn't NA).
+You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. 
+
+1. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINTS: !is.na() is a command for checking if something isn't NA. 11*(HbA1c-2.15) gives mmol/mol from %).
 
 1. Plot histograms of HbA1c and BMI to remind yourself of the distribution. Looking at data is important.
 
@@ -455,6 +457,7 @@ nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Male')) / nrow(filter(t
 nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Female')) / nrow(filter(testdata4,bmi>25 & gender=='Female'))
 ```
 
+-->
 
 
 ### Extension - Linear Regression
@@ -464,4 +467,3 @@ If you've made it to the end, congratulations. The R command lm can perform line
 What does the output of ```lm(bmi~age,data=testdata)``` tell you? Wrapping summary() around that gives you even more information.
 
 Explore the data in whichever way you feel is interesting. Let me know if you find anything.
--->
