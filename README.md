@@ -329,9 +329,26 @@ prevalence=sum(diabetes)/length(diabetes)
 
 In this session, we will introduce two important packages for data science: dplyr and ggplot2. Make sure your data is loaded into R by checking the workspace. If it isn't, load the same data we used in session 3.
 
-dplyr has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
+`dplyr` has a lot of useful functions for managing complicated datasets, and in this session we'll introduce them one at a time. They all have the same structure: command(dataframe,instructions). The output is always another dataframe, but unless you assign the output to something, it will just print to screen rather than going into the workspace. dataframe2=command(dataframe,instructions) will store the output in an updated dataframe called dataframe2.
 
 This session is light on additional content and contains more exercises for exploring the data. dplyr commands may help you with the exercises and can help you write readable code, but are not always necessary.
+
+Prepare the data by running the following:
+
+```
+install.packages('readr')
+install.packages('knitr')
+install.packages('dplyr')
+
+library('readr')
+library('knitr')
+library('dplyr')
+
+myfile = "https://raw.github.com/hdg204/DoctorsAsDataScientists/main/diabetes_prediction_dataset.csv"
+testdata=read.csv(myfile)
+```
+
+Now we will learn three new dplyr commands: `filter`, `mutate`, and `select`.
 
 ### Filter
 
@@ -345,6 +362,8 @@ You can combine conditions in the same way as before:
 
 ```filter(testdata,hypertension==1&bmi<30)```
 
+Take some time to work out what this command is doing.
+
 What does ```nrow(filter(testdata,hypertension==1&bmi<30))``` tell us about the data?
 
 ### Mutate
@@ -353,11 +372,15 @@ Mutate creates new columns, which could be based on existing columns in your dat
 
 ```testdata2=mutate(testdata,obesity=BMI>30)```
 
-Will create a new column, called obesity, which is TRUE when BMI > 30, and FALSE when it isn't.
+Will create a new column, called obesity, which is TRUE when BMI > 30, and FALSE when it isn't. It stores the result in a new dataframe called `testdata2`.
 
 ### Select
 
 Select is fairly simple, it just selects individual columns that you want. Useful if your dataset has hundreds of variables and you're only interested in a handful.
+
+```testdata2=select(testdata, gender, age, BMI)```.
+
+When might this be useful?
 
 ### Exercise 3
 
