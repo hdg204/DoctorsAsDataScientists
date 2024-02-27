@@ -386,17 +386,17 @@ When might this be useful?
 
 You're interested in the differences between men and women in your data. 
 
-First you check what percentage of your data is Male, and what percentage is Female.
+1. First you check what percentage of your data is Male, and what percentage is Female.
 
-What percentage of males are current smokers? What about females?
+1. What percentage of males are current smokers? What about females?
 
-Are males more or less likely to have diabetes, heart disease or hypertension than females?
+1. Are males more or less likely to have diabetes, heart disease or hypertension than females?
 
-What is the difference in the average BMI between males and females?
+1. What is the difference in the average BMI between males and females?
 
-Plot a histogram of the BMI in males, and then again for females.
+1. Plot a histogram of the BMI in males, and then again for females.
 
-Make a box plot showing this information.
+1. Make a box plot showing this information.
 
 What do you think is driving these results?
 
@@ -429,13 +429,13 @@ boxplot(bmi~gender,testdata)
 
 You're interested in the links between HbA1c and BMI. But your HbA1c column is a bit messed up, it's in %, when we prefer mmol/mol, and it has some missing data. Make a new dataframe where the HbA1c is in mmol/mol, and the missing values are removed (HINT: !is.na() is a command for checking if something isn't NA).
 
-Plot histograms of HbA1c and BMI to remind yourself of the distribution. Looking at data is important.
+1. Plot histograms of HbA1c and BMI to remind yourself of the distribution. Looking at data is important.
 
-You have this really long tail in that distribution of BMI. How many are above 60? Make a new dataframe where you exclude those and plot a new histogram of BMI.
+1. You have this really long tail in that distribution of BMI. How many are above 60? Make a new dataframe where you exclude those and plot a new histogram of BMI.
 
-In this new dataframe, find the highest BMI value. What is the HbA1c of the person with the highest BMI value?
+1. In this new dataframe, find the highest BMI value. What is the HbA1c of the person with the highest BMI value?
 
-What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different in men and women?
+1. What percentage of people with a BMI over 25 also have an HbA1c over 48? Is this percentage different in men and women?
 
 ### Solutions
 
