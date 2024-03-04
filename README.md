@@ -378,7 +378,7 @@ Will create a new column, called obesity, which is TRUE when BMI > 30, and FALSE
 
 Select is fairly simple, it just selects individual columns that you want. Useful if your dataset has hundreds of variables and you're only interested in a handful.
 
-```testdata2=select(testdata, gender, age, BMI)```.
+```testdata2=select(testdata, gender, age, bmi)```.
 
 When might this be useful?
 
