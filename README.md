@@ -316,6 +316,9 @@ If you have finished, repeat this with HbA1c and diabetes.
 
 *This section is hidden until after the workshop*
 
+<!-- 
+
+
 ```
 hypertension_prev=sum(testdata$hypertension==1)/nrow(testdata)
 hypertension_u25=sum(testdata$hypertension[testdata$bmi<25]==1)/sum(testdata$bmi<25)
@@ -326,6 +329,8 @@ mean(testdata$bmi[testdata$hypertension==1])-mean(testdata$bmi[testdata$hyperten
 boxplot(bmi~hypertension,testdata)
 prevalence=sum(diabetes)/length(diabetes)
 ```
+
+-->
 
 ## Session 3 - dplyr and basic statistics
 
