@@ -162,7 +162,6 @@ You’ve been asked to check how many patients in your clinic have diabetes to c
 
 ### Solution
 
-<!-- 
 
 ```
 HbA1c1=c(5, 7, 6.5, 9, 8, 7, 5.5, 4.5, 9, 4)
@@ -173,7 +172,6 @@ diabetes=HbA1c2>48
 prevalence=sum(diabetes)/length(diabetes)
 ```
 
--->
 
 ### Conclusion
 
@@ -316,7 +314,6 @@ If you have finished, repeat this with HbA1c and diabetes.
 
 *This section is hidden until after the workshop*
 
-<!-- 
 
 
 ```
@@ -330,7 +327,6 @@ boxplot(bmi~hypertension,testdata)
 prevalence=sum(diabetes)/length(diabetes)
 ```
 
--->
 
 ## Session 3 - dplyr and basic statistics
 
@@ -410,8 +406,7 @@ What do you think is driving these results?
 
 ### Solutions
 
-*This section is hidden until after the workshop*
- <!-- 
+
 ```
 nrow(filter(testdata=='Male'))/nrow(testdata)
 nrow(filter(testdata=='Male' & smoking_history=='current')) / nrow(filter(testdata=='Male'))
@@ -431,7 +426,7 @@ hist(testdata$bmi[testdata$gender=='Male'])
 hist(testdata$bmi[testdata$gender=='Female'])
 boxplot(bmi~gender,testdata)
 ```
--->
+
 
 ### Exercise 4
 
@@ -449,8 +444,7 @@ You're interested in the links between HbA1c and BMI. But your HbA1c column is a
 
 ### Solutions
 
-*This section is hidden until after the workshop*
- <!-- 
+
 ```
 testdata2=filter(testdata,!is.na(HbA1c_level))
 testdata3=mutate(testdata2,HbA1cmmol=11*(HbA1c_level-2.15))
@@ -465,7 +459,6 @@ nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Male')) / nrow(filter(t
 nrow(filter(testdata4,bmi>25 & HbA1cmmol > 48 & gender=='Female')) / nrow(filter(testdata4,bmi>25 & gender=='Female'))
 ```
 
--->
 
 
 ### Extension - Linear Regression
