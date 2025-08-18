@@ -1,0 +1,11 @@
+person_id,index_date,sex,age,height_cm,weight_kg,bmi,smoking_status,ethnicity,imd_quintile
+1,2017-01-31,Female,84,164.1,53.0,19.7,Never,White,3
+2,2018-02-16,Male,31,172.2,60.8,20.5,Current,White,4
+3,2022-09-30,Female,76,157.6,75.0,30.2,Current,White,3
+4,2015-12-04,Female,30,169.1,76.1,26.6,Current,White,5
+5,2015-12-23,Male,41,176.5,70.1,22.5,Never,White,3
+6,2017-09-19,Female,71,159.8,64.6,25.3,Never,White,2
+7,2020-06-05,Female,53,174.6,116.5,38.2,Former,White,3
+8,2022-04-05,Female,89,159.5,88.8,34.9,Former,White,3
+9,2020-01-24,Male,35,181.8,87.3,26.4,Never,White,2
+10,2019-06-11,Male,65,164.1,85.6,31.8,Former,White,4
