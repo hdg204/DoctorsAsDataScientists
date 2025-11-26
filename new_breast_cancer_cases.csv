@@ -1,0 +1,4 @@
+mean radius,mean texture,mean perimeter,mean area,mean smoothness,mean compactness,mean concavity,mean concave points,mean symmetry,mean fractal dimension,worst radius,worst texture,worst perimeter,worst area,worst smoothness,worst compactness,worst concavity,worst concave points,worst symmetry,worst fractal dimension
+18.5,16.2,120.4,980.0,0.102,0.145,0.18,0.085,0.195,0.062,24.8,21.5,158.2,1804.0,0.145,0.32,0.41,0.175,0.305,0.085
+12.1,14.4,78.1,455.0,0.085,0.06,0.02,0.019,0.18,0.058,13.95,17.2,92.6,620.0,0.118,0.155,0.06,0.05,0.26,0.067
+15.8,22.5,103.3,760.0,0.094,0.092,0.095,0.06,0.206,0.07,18.25,27.1,120.9,1035.0,0.13,0.215,0.2,0.12,0.285,0.079
